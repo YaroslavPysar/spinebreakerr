@@ -1,64 +1,51 @@
-# PDF Generator
+# Data Structures Package
 
-A simple yet powerful PDF generation tool written in TypeScript.
+This package provides implementations of common data structures in JavaScript. Currently, it includes implementations of the following data structures:
+
+- Linked List
+- Stack
+- Queue
 
 ## Installation
 
+You can install this package via npm:
+
 ```bash
-npm install pdf-generator
+npm install @your-username/data-structures
 ```
 
 ## Usage
 
 ```javascript
-const PDFGenerator = require("pdf-generator");
+// Import the data structures
+const { LinkedList, Stack, Queue } = require('@your-username/data-structures');
 
-// Create a new PDFGenerator instance
-const pdfGenerator = new PDFGenerator();
+// Example usage of Linked List
+const linkedList = new LinkedList();
+linkedList.add(1);
+linkedList.add(2);
+linkedList.add(3);
+console.log(linkedList.getSize()); // Output: 3
 
-// Add content to the PDF
-pdfGenerator
-  .addText("Hello, this is a PDF generated using PDFGenerator!", {
-    fontSize: 20,
-    align: "center",
-  })
-  .addPage()
-  .addText("This is page 2 of the PDF.", {
-    y: 100,
-    align: "center",
-  });
+// Example usage of Stack
+const stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log(stack.pop()); // Output: 3
 
-// Save the PDF
-pdfGenerator.save();
+// Example usage of Queue
+const queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+console.log(queue.dequeue()); // Output: 1
 ```
 
-## API
+## Contributing
 
-### `PDFGenerator(options?: PDFGeneratorOptions)`
-
-Creates a new instance of PDFGenerator with optional options.
-
-- `options.filename`: Specify the filename for the generated PDF. Default is `'output.pdf'`.
-
-### `addText(text: string, options?: TextOptions): PDFGenerator`
-
-Adds text to the PDF document.
-
-- `text`: The text content to add.
-- `options`: Optional parameters for text formatting, such as fontSize, font, alignment, etc.
-
-### `addPage(): PDFGenerator`
-
-Adds a new page to the PDF document.
-
-### `save(): void`
-
-Saves the PDF document to the specified filename.
-
-## Example
-
-Check the `example` directory for an example usage of the PDFGenerator.
+Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This package is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
